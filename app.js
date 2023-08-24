@@ -4,7 +4,7 @@ const app = express();
 const connectDB=require("./db/connect")
 const PORT = process.env.PORT || 5000;
 const stories_routes = require("./routes/stories");
-app.get("/", (res, req) => {
+app.get("/", (req, res) => {
   res.send("Hi , I am live");
 });
 //middleware or to set router
