@@ -26,7 +26,7 @@ const getAllStories = async (req, res) => {
   let skip =(page-1)*limit;
   apiData=apiData.skip(skip).limit(limit);
  
-  const myStories=await apiData;
+  const myData=await apiData;
   res.status(200).json({myData,nbHits:myData.length });
 };
 const getAllStoriesTesting = async (req, res) => {
