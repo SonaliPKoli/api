@@ -8,6 +8,8 @@ var app = express();
 
 var connectDB = require("./db/connect");
 
+var cors = require("cors");
+
 var PORT = process.env.PORT || 5000;
 
 var stories_routes = require("./routes/stories");
@@ -16,6 +18,7 @@ app.get("/", function (req, res) {
   res.send("Hi , I am live");
 }); //middleware or to set router
 
+app.use(cors());
 app.use("/api/stories", stories_routes);
 
 var start = function start() {
